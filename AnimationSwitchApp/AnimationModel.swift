@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AnimationModels {
+struct AnimationModel {
     let preset: String
     let curve: String
     let force: Double

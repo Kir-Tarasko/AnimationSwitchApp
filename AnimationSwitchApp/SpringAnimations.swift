@@ -9,7 +9,7 @@ import Spring
 
 
 class SpringAnimations {
-    static var animations: [AnimationModels] {
+    static var animations: [AnimationModel] {
         getAnimation()
     }
     
@@ -39,19 +39,19 @@ class SpringAnimations {
                          "easeOutCubic",
     ]
     
-    static func getAnimation() -> [AnimationModels] {
-        var animations: [AnimationModels] = []
+    static func getAnimation() -> [AnimationModel] {
+        var animations: [AnimationModel] = []
         for animation in presets {
             let delay = { Double.random(in: 0...3) }
             let duration = { Double.random(in: 0...3) }
             let force = { Double.random(in: 0...3) }
-            let curve = {self.curves.randomElement() }
-            animations.append(AnimationModels(preset: animation, curve: curve() ?? "easeInExpo", force: force(), duration: duration(), delay: delay()))
+            let curve = { curves.randomElement() }
+            animations.append(AnimationModel(preset: animation, curve: curve() ?? "", force: force(), duration: duration(), delay: delay()))
         }
         return animations
     }
     
-    static func switchAnimation() -> AnimationModels {
+    static func switchAnimation() -> AnimationModel {
         animations.randomElement() ?? animations[0]
     }
     
