@@ -17,6 +17,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var delayLabel: UILabel!
     
+    override func viewDidLoad() {
+        animationLabel.text = "Preset:\(switchAnimation.preset)"
+        curveLabel.text = "Curve: \(switchAnimation.curve)"
+        forceLabel.text = String (format: "Force: %.2f", switchAnimation.force )
+        durationLabel.text = String(format: "Duration: %.2f", switchAnimation.duration)
+        delayLabel.text = String(format: "Delay: %.2f", switchAnimation.delay)
+    }
+    
     private var switchAnimation = SpringAnimations.switchAnimation()
     
     @IBAction func springAnimationSwitch(_ sender: SpringButton) {
@@ -24,11 +32,11 @@ class ViewController: UIViewController {
         springAnimationView.animation = switchAnimation.preset
         springAnimationView.animate()
         
-        animationLabel.text = switchAnimation.preset
-        curveLabel.text = switchAnimation.curve
-        forceLabel.text = String (format: "Force: %02f", switchAnimation.force )
-        durationLabel.text = String(format: "Duration: %02f", switchAnimation.duration)
-        delayLabel.text = String(format: "Delay: %02f", switchAnimation.delay)
+        animationLabel.text = "Preset:\(switchAnimation.preset)"
+        curveLabel.text = "Curve: \(switchAnimation.curve)"
+        forceLabel.text = String (format: "Force: %.2f", switchAnimation.force )
+        durationLabel.text = String(format: "Duration: %.2f", switchAnimation.duration)
+        delayLabel.text = String(format: "Delay: %.2f", switchAnimation.delay)
         
         switchAnimation = SpringAnimations.switchAnimation()
         

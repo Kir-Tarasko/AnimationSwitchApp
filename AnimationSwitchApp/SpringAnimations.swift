@@ -16,6 +16,9 @@ class SpringAnimations {
     static let presets = ["slideLeft",
                           "slideRight",
                           "slideDown",
+                          "fall",
+                          "shake",
+                          "wobble",
                           "fadeIn",
                           "slideUp",
                           "squeezeLeft",
@@ -31,7 +34,10 @@ class SpringAnimations {
                          "linear",
                          "easeIn",
                          "easeOut",
-                         "easeInOut"]
+                         "easeInOut",
+                         "easeInOutCubic",
+                         "easeOutCubic",
+    ]
     
     static func getAnimation() -> [AnimationModels] {
         var animations: [AnimationModels] = []
