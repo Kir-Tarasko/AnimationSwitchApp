@@ -1,0 +1,6 @@
+framework module Pods_AnimationSwitchApp {
+  umbrella header "Pods-AnimationSwitchApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
